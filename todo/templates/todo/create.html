@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if error %}
+{{error}}
+<br/>
+<br/>
+<br/>
+<br/>
+{% endif %}
+
+<h2>CREATE!</h2>
+
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    Task:-
+    <br/>
+    <input type="text" name="task" />
+    <br/>
+    Complete By:-
+    <br/>
+    <input type="text" name="complete_by" />
+    <br/>
+    Started On:-
+    <br/>
+    <input type="text" name="started_on" />
+    <br/>
+    Description:-
+    <br/>
+    <input type="textbox" name="description" />
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+
+    <input class="btn btn-primary" type="submit" value="CREATE!" />
+</form>
+{% endblock %}
